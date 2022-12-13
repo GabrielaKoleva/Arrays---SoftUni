@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class printNumbersInReverseOrder_02 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int count = Integer.parseInt(scan.nextLine());
+
+        int[] numbers = new int [count];
+
+        for (int i = 0; i < count; i++) {
+            numbers[i] = Integer.parseInt(scan.nextLine());
+        }
+            for (int j = count - 1; j >= 0; j--) {
+                System.out.print(numbers[j] + " ");
+
+            }
+
+    }
+}
