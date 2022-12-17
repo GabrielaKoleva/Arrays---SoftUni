@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class reverseAnArrayOfStrings_04 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        String[] elements = scan.nextLine().split(" ");
+
+        for (int i = 0; i < elements.length/2; i++) {
+            int swapIndex = elements.length - i - 1;
+
+            String tmp = elements[i];
+            elements[i] = elements[swapIndex];
+            elements[swapIndex] = tmp;
+
+        }
+        System.out.println(String.join(" ", elements));
+    }
+}
