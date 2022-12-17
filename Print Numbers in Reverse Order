@@ -1,20 +1,19 @@
 import java.util.Scanner;
 
-public class printNumbersInReverseOrder_02 {
+public class reverseAnArrayOfStrings_04 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        int count = Integer.parseInt(scan.nextLine());
+       String[] currentInput = scan.nextLine().split(" ");
 
-        int[] numbers = new int [count];
+        for (int i = 0; i < currentInput.length / 2; i++) {
 
-        for (int i = 0; i < count; i++) {
-            numbers[i] = Integer.parseInt(scan.nextLine());
+            int swapIndex = currentInput.length - i - 1;
+
+            String words = currentInput[i];
+            currentInput[i] = currentInput[swapIndex];
+            currentInput[swapIndex] = words;
         }
-            for (int j = count - 1; j >= 0; j--) {
-                System.out.print(numbers[j] + " ");
-
-            }
-
+        System.out.println(String.join(" ", currentInput));
     }
 }
