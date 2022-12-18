@@ -1,22 +1,28 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class equalArrays_06 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        String[] firstArray = scan.nextLine().split(" ");
-        String[] secondArray = scan.nextLine().split(" ");
 
-        int sum = 0;
+      int[] firstNumbers = Arrays
+              .stream(scan.nextLine().split(" "))
+              .mapToInt(Integer::parseInt).toArray();
+      int[] secondNumbers = Arrays
+              .stream(scan.nextLine().split(" "))
+              .mapToInt(Integer::parseInt).toArray();
 
-        for (int i = 0; i < firstArray.length; i++) {
+      int sum = 0;
 
-            if (!firstArray[i].equals(secondArray[i])){
+        for (int i = 0; i < firstNumbers.length; i++) {
+
+            if (firstNumbers[i] != secondNumbers[i]){
                 System.out.printf("Arrays are not identical. " +
-                        "Found difference at %d index.%n", i);
+                        "Found difference at %d index.", i);
                 return;
             }
-            sum += Integer.parseInt(firstArray[i]);
+            sum += firstNumbers[i];
         }
         System.out.printf("Arrays are identical. Sum: %d", sum);
     }
